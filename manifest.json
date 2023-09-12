@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "LittleIP",
+    "version": "1.0.0",
+    "description": "My little IP",
+    "icons": {
+        "16": "icons/ip16.png",
+        "32": "icons/ip32.png",
+        "48": "icons/ip48.png",
+        "128": "icons/ip128.png"
+    },
+    "browser_action":{
+        "default_icon": "icons/ip32.png",
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [ 
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content_script/base_script.js"]
+        }
+      ],
+      "background" :{
+          "scripts" :["background/bg.js"],
+          "persistent" : false
+      },
+      "permissions": [
+        "activeTab",
+        "tabs"
+      ]
+}
